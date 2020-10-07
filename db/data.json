@@ -1,0 +1,26 @@
+{
+    "book1": [
+      {
+        "name": "Peter",
+        "phone": "+61432094987",
+        "friends": [{"name": "John", "phoneNumber": "+61432094980"}, {"name": "Mark", "phoneNumber": "+61432094981"} ]
+      },
+      {
+        "name": "Paul",
+        "phone": "+61432094997",
+        "friends": [{"name": "Timothy", "phoneNumber": "+61432094990"}, {"name": "Matthew", "phoneNumber": "+61432094991"} ]
+      }
+    ],
+    "book2": [
+      {
+        "name": "Peter",
+        "phone": "+61432094987",
+        "friends": [{"name": "John", "phoneNumber": "+61432094980"}, {"name": "Mark", "phoneNumber": "+61432094981"}, {"name": "Luke", "phoneNumber": "+61432094982"} ]
+      },
+      {
+        "name": "Paul",
+        "phone": "+61432094997",
+        "friends": [{"name": "Timothy", "phoneNumber": "+61432094990"}, {"name": "Barnabas", "phoneNumber": "+61432094999"}, {"name": "Matthew", "phoneNumber": "+61432094991"} ]
+      }
+    ]
+}

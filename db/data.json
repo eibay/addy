@@ -1,4 +1,5 @@
 {
+  "data": {
     "book1": [
       {
         "name": "Peter",
@@ -23,4 +24,5 @@
         "friends": [{"name": "Timothy", "phoneNumber": "+61432094990"}, {"name": "Barnabas", "phoneNumber": "+61432094999"}, {"name": "Matthew", "phoneNumber": "+61432094991"} ]
       }
     ]
+  }
 }

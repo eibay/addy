@@ -2,11 +2,13 @@
 const express = require('express');
 const app = express();
 
-const config = require('config');
+// const config = require('config');
 const morgan = require('morgan');
 const helmet = require('helmet');
 
-const users = require('./routes/users');
+const users = require('./src/routes/users');
+const books = require('./src/routes/addressBooks');
+
 
 
 const debugDB = require('debug')('app:db');
@@ -17,10 +19,12 @@ app.use(express.urlencoded({extended: true}));
 app.use(helmet());
 
 app.use('/api/users', users);
+app.use('/api/books', books);
+
 
 // Configuration
 // TODO: Hook it up with AWS secrets parameter store if feasible
-console.log(`App run key:, ${config.get('config.key')}`);
+// console.log(`App run key:, ${config.get('config.key')}`);
 
 if (app.get('env') === 'development') {
   app.use(morgan('tiny'));

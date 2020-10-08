@@ -1,4 +1,4 @@
-# PwC Server
+# Addy
 A simple node server that provides api endpoints for an address book. The initial set of users
 are seeded automatically via data.json file. It uses local storage to persist address book data. Name and phone number is hashed and will be used as Id for the newly created user.
 

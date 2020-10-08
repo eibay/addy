@@ -112,7 +112,7 @@ describe("testing user routes", () => {
     ])
   });
 
-  it("GET /users/:id/friends sorted- success", async () => {
+  it("GET /users/compare unique friends - success", async () => {
     const {body} = await request(app).get(`/users/compare?name1=Jacob&name2=Paul`);
     expect(body).toEqual([
       {

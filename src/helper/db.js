@@ -53,8 +53,7 @@ const addFriend = (id, friendId) => {
   user.friends = [...user.friends, friend];
   db.users = [...db.users, user];
   ls('users', db.users);
-  const name = user.name;
-  return {friend, name};
+  return friend;
 }
 
 module.exports = {

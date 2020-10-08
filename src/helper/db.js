@@ -45,15 +45,22 @@ const compare = (a, b) => {
   return comparison; // to reverse: comparison * -1;
 }
 
-const addFriend = (id, friend) => {
+const addFriend = (id, friendId) => {
   const db = ls.get('users');
-  user = db.users.filter((user) => (user.id === id));
-  user.friends.push(friend);
+  const friendToAdd = getUser(friendId)[0];
+  const friend = {id: friendToAdd.id, name: friendToAdd.name, phone: friendToAdd.phone};
+  const user = (db.users.filter((user) => (user.id === id)))[0];
+  user.friends = [...user.friends, friend];
+  db.users = [...db.users, user];
+  ls('users', db.users);
+  const name = user.name;
+  return {friend, name};
 }
 
 module.exports = {
   getFriends,
   getFriendsById,
+  addFriend,
   getUsers,
   getUser,
   postUser,

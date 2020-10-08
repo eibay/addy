@@ -142,4 +142,40 @@ describe("testing user routes", () => {
       }
     ])
   });
+
+  it("POST /users/:id/friends/add selected user as friend - success", async () => {
+    const id = "e3e79740fcc8c17d435d14ecc2c8bf7c1782d033";
+    const friendId = "e3e79740fcc8c17d435d14ecc2c8bf7c1782d036";
+    await request(app).post(`/users/${id}/friends/add?friendId=${friendId}`);
+    const {body} = await request(app).get("/users");
+    expect(body[0]).toEqual(
+      {
+        "id": "e3e79740fcc8c17d435d14ecc2c8bf7c1782d033",
+        "name": "Abraham",
+        "phone": "+61432094987",
+        "friends": [
+            {
+                "id": "e3e79740fcc8c17d435d14ecc2c8bf7c1782d037",
+                "name": "John",
+                "phoneNumber": "+61432094980"
+            },
+            {
+                "id": "e3e79740fcc8c17d435d14ecc2c8bf7c1782d038",
+                "name": "Mark",
+                "phoneNumber": "+61432094981"
+            },
+            {
+                "id": "e3e79740fcc8c17d435d14ecc2c8bf7c1782d039",
+                "name": "Matthew",
+                "phoneNumber": "+61432094991"
+            },
+            {
+                "id": "e3e79740fcc8c17d435d14ecc2c8bf7c1782d036",
+                "name": "Paul",
+                "phone": "+61432094930"
+            }
+        ]
+      }
+    );
+  });
 })

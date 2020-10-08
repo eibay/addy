@@ -3,7 +3,7 @@ const express = require('express');
 const hash = require('object-hash');
 const url = require('url');
 const router = express.Router();
-const {getUsers, getUser, getFriends,getFriendsById, postUser} = require('../helper/db');
+const {getUsers, getUser, getFriends,getFriendsById, addFriend, postUser} = require('../helper/db');
 
 
 router.get('/compare', (req, res) => {
@@ -51,6 +51,13 @@ router.post('/', (req, res) => {
     res.send("Error when posting user:", error);    
   };
 });
+
+router.post('/:id/friends/add', (req, res) => {
+  //?friendId=<user.id>
+  const {friendId} = url.parse(req.url,true).query;
+  const {friend} = addFriend(req.params.id, friendId);
+  res.send({"Successfully added to list of friends": friend});
+})
 
 function validateUser(user) { 
   const schema = Joi.object({

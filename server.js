@@ -7,9 +7,6 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 
 const users = require('./src/routes/users');
-const books = require('./src/routes/addressBooks');
-
-
 
 const debugDB = require('debug')('app:db');
 
@@ -19,8 +16,6 @@ app.use(express.urlencoded({extended: true}));
 app.use(helmet());
 
 app.use('/api/users', users);
-app.use('/api/books', books);
-
 
 // Configuration
 // TODO: Hook it up with AWS secrets parameter store if feasible

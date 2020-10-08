@@ -5,7 +5,7 @@ const {getUsers, getFriends, getUser} = require('../helper/db');
 
 router.get('/', (req, res) => {
   const users = getUsers();
-  console.log('users:', users);
+  console.log('typeof:', typeof(users));
   res.send(users);
 });
 

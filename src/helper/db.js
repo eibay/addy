@@ -13,14 +13,27 @@ const getUser = (id) => {
   return user;
 };
 
-const getFriends = (id) => {
+const postUser = (user) => {
+  const db = ls.get('users');
+  db.users.push(user);
+  ls('users', db);
+};
+
+const getFriends = (name) => {
+  const db = ls.get('users');
+  user = db.users.filter((user) => (user.name === name));
+  return user[0].friends;
+};
+
+const addFriend = (id, friend) => {
   const db = ls.get('users');
   user = db.users.filter((user) => (user.id === id));
-  return user[0].addressBook[0].friends;
-};
+  user.friends.push(friend);
+}
 
 module.exports = {
   getFriends,
   getUsers,
   getUser,
+  postUser,
 };

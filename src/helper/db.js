@@ -1,9 +1,22 @@
-const {json} = require('express');
-const fs = require('fs');
-const data = require('../../db/data.json');
+const db = require('../../db/data.json');
 
-const getData = () => (data.data);
+const getUsers = () => {
+  console.log('db:getUsers:', db.users);
+  return db.users;
+};
+
+const getUser = (id) => {
+  const user = db.users.filter((user) => (user.id === id));
+  return user;
+};
+
+const getFriends = (id) => {
+  user = db.users.filter((user) => (user.id === id));
+  return user[0].addressBook[0].friends;
+};
 
 module.exports = {
-  getData: getData
+  getFriends,
+  getUsers,
+  getUser,
 };

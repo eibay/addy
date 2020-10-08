@@ -1,28 +1,40 @@
 {
-  "data": {
-    "book1": [
+  "users": [
       {
-        "name": "Peter",
+        "id": "1234",
+        "name": "Abraham",
         "phone": "+61432094987",
-        "friends": [{"name": "John", "phoneNumber": "+61432094980"}, {"name": "Mark", "phoneNumber": "+61432094981"} ]
+        "addressBook": [
+          {"friends": [{"id": "1236", "name": "John", "phoneNumber": "+61432094980"}, {"id": "1237", "name": "Mark", "phoneNumber": "+61432094981"}]},
+          {"work": [{"id": "1236", "name": "Mary", "phoneNumber": "+61432094980"}, {"id": "1237", "name": "Mark", "phoneNumber": "+61432094981"}]}
+        ]
       },
       {
-        "name": "Paul",
+        "id": "1235",
+        "name": "Isaac",
         "phone": "+61432094997",
-        "friends": [{"name": "Timothy", "phoneNumber": "+61432094990"}, {"name": "Matthew", "phoneNumber": "+61432094991"} ]
-      }
-    ],
-    "book2": [
-      {
-        "name": "Peter",
-        "phone": "+61432094987",
-        "friends": [{"name": "John", "phoneNumber": "+61432094980"}, {"name": "Mark", "phoneNumber": "+61432094981"}, {"name": "Luke", "phoneNumber": "+61432094982"} ]
+        "addressBook": [
+          {"friends": [{"id": "1238", "name": "Timothy", "phoneNumber": "+61432094990"}, { "id": "1239", "name": "Matthew", "phoneNumber": "+61432094991"}]},
+          {"work": [{"id": "1237", "name": "Mark", "phoneNumber": "+61432094981"}]}
+        ]
       },
       {
+        "id": "1236",
+        "name": "Jacob",
+        "phone": "+61432094987",
+        "addressBook": [
+          { "friends": [{"id": "1236", "name": "John", "phoneNumber": "+61432094980"}, {"id": "1241","name": "Luke", "phoneNumber": "+61432094982"}]},
+          { "work": [{"id": "1237", "name": "Mark", "phoneNumber": "+61432094981"}]}
+        ]
+      },
+      {
+        "id": "1237",
         "name": "Paul",
-        "phone": "+61432094997",
-        "friends": [{"name": "Timothy", "phoneNumber": "+61432094990"}, {"name": "Barnabas", "phoneNumber": "+61432094999"}, {"name": "Matthew", "phoneNumber": "+61432094991"} ]
+        "phone": "+61432094930",
+        "addressBook": [
+          { "friends": [{"id": "1238", "name": "Timothy", "phoneNumber": "+61432094990"}, {"id": "1243", "name": "Barnabas", "phoneNumber": "+61432094999"}, {"id": "1239", "name": "Matthew", "phoneNumber": "+61432094991"}]},
+          { "work": [{"id": "1237", "name": "Mark", "phoneNumber": "+61432094981"}]}
+        ]
       }
-    ]
-  }
+  ]
 }

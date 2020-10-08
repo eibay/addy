@@ -1,11 +1,20 @@
 const Joi = require('joi');
 const express = require('express');
 const router = express.Router();
-const {getData} = require('../helper/db');
+const {getUsers, getFriends, getUser} = require('../helper/db');
 
 router.get('/', (req, res) => {
-  const data = getData();
-  res.send(data.book1);
+  const users = getUsers();
+  console.log('users:', users);
+  res.send(users);
+});
+
+router.get('/:id', (req, res) => {
+  res.send(getUser(req.params.id));
+});
+
+router.get('/:id/friends', (req, res) => {
+  res.send(getFriends(req.params.id));
 });
 
 module.exports = router;

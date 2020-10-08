@@ -3,7 +3,7 @@ const express = require('express');
 const hash = require('object-hash');
 const url = require('url');
 const router = express.Router();
-const {getUsers, getFriends, getUser, postUser} = require('../helper/db');
+const {getUsers, getUser, getFriends,getFriendsById, postUser} = require('../helper/db');
 
 
 router.get('/compare', (req, res) => {
@@ -18,6 +18,11 @@ router.get('/compare', (req, res) => {
   res.send(diff);
 });
 
+router.get('/:id/friends', (req, res) => {
+  const friends = getFriendsById(req.params.id);
+  res.send(friends);
+});
+
 router.get('/', (req, res) => {
   const users = getUsers();
   res.send(users);
@@ -27,9 +32,6 @@ router.get('/:id', (req, res) => {
   res.send(getUser(req.params.id));
 });
 
-router.get('/:id/friends', (req, res) => {
-  res.send(getFriends(req.params.name));
-});
 
 router.post('/', (req, res) => {
   const {error} = validateUser(req.body);
